@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "373f7428-836a-4267-ba3f-4f042649fe46",
+		"name": "Release",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24187198"
+	},
+	"item": [
+		{
+			"name": "Release_JordanName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var responseData = pm.response.json();\r",
+							"console.log(responseData.releaseCalendarProducts[0].name);\r",
+							"\r",
+							"pm.test(\"Verify name equals to <Jordan Retro 1 High OG> for [JordanRetro]\", function(){\r",
+							"    pm.expect(responseData.releaseCalendarProducts[0].name).to.equal(\"Jordan Retro 1 High OG\");\r",
+							"});\r",
+							"\r",
+							"console.log(responseData.releaseCalendarProducts[0].reservation.pricesFormatted[0].formattedValue);\r",
+							"pm.test(\"Verify price equals to <$ 180.00> for [JordanRetro]\", function(){\r",
+							"    pm.expect(responseData.releaseCalendarProducts[0].reservation.pricesFormatted[0].formattedValue).to.equal(\"$ 180.00\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "www.footlocker.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cookie",
+						"value": "at_check=true; AMCVS_40A3741F578E26BA7F000101%40AdobeOrg=1; AMCV_40A3741F578E26BA7F000101%40AdobeOrg=-1124106680%7CMCIDTS%7C19315%7CMCMID%7C32850138033599561243380700835046842123%7CMCAAMLH-1669337450%7C7%7CMCAAMB-1669337450%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1668739850s%7CNONE%7CvVersion%7C5.2.0; JSESSIONID=59b3ca0a-1fb2-4fc0-b7ea-84a761cbff4a; ZGWID=eyJhbGciOiJIUzUxMiJ9.eyJndWVzdElkIjoiYTZmYjJmYmUtZjQ5Mi00ODk1LThmZmMtNWM4ZmZjY2YxMDdlIiwiaWF0IjoxNjY4NzMyNjUwLCJleHAiOjE3MDAyNjg2NTB9.ewZQiawwapLbLrClN1HhqgZ5RSawQLHZGmqothaGgfKkA6qwTlvi4XKYeQlPcR_u5zfStAaJC0VW2ubNKqMSCQ; mboxEdgeCluster=35; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX19b6ztakxztvJL%2B3AgOH%2BFWio3iD7hhBoo%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX189X1kx0NtkK2pRkyGPBYr4xNCJgiFHPZo%3D; userStatus=guest; s_vs=1; s_lv_s=First%20Visit; s_pr_tbe65=1668732651965; s_cc=true; _gid=GA1.2.1720048162.1668732652; sc.ASP.NET_SESSIONID=pg2tpxv4fymm0mnhxce5lm4l; _schn=_kkiuc7h; _scid=c00ba526-91cd-4b2d-9eaa-7b4c67a05cf3; IR_gbd=footlocker.com; _rdt_uuid=1668732653296.f1c9cb64-9c95-4f4f-a9d4-5c7530e3519a; sc.UserId=126ed4f4-00b0-4373-ad97-46d03d085e24; _sctr=1|1668661200000; _mibhv=anon-1668732653878-2734330481_2389; _fbp=fb.1.1668732653944.1351181765; _tt_enable_cookie=1; _ttp=ef7e485d-4178-4941-8885-a5cbf4dce546; __attentive_id=6dc14cb71c52461b8d6a37ea3a3078a6; _attn_=eyJ1Ijoie1wiY29cIjoxNjY4NzMyNjU0MTk3LFwidW9cIjoxNjY4NzMyNjU0MTk3LFwibWFcIjoyMTkwMCxcImluXCI6ZmFsc2UsXCJ2YWxcIjpcIjZkYzE0Y2I3MWM1MjQ2MWI4ZDZhMzdlYTNhMzA3OGE2XCJ9In0=; __attentive_cco=1668732654204; bluecoreNV=true; _pin_unauth=dWlkPU5qTXhNREUwTmpRdFlqQTVZeTAwTjJObUxXSTVZalV0TTJGaVl6UTBNMkkxWTJKaA; __attentive_dv=1; __attentive_ss_referrer=\"ORGANIC\"; _gcl_au=1.1.1926669407.1668732655; termsofuse_consent=true; ccpa_consent=disabled; IR_PI=0dcd69ff-66db-11ed-83e0-27a03d9df5a3%7C1668819415196; _gat_gtag_UA_50007301_5=1; aa_pageHistory=[{\"n\":\"FL: W: En: Release Dates: Jordan: Z5485612\",\"t\":\"Release Calendar\",\"p\":\"/en/release-dates/jordan/Z5485612.html\"},{\"n\":\"FL: W: Release Dates\",\"t\":\"Release Calendar\",\"p\":\"/release-dates\"}]; rl_session=RudderEncrypt%3AU2FsdGVkX19BXzycWGvEy9DCjI1eyQUpeQzAzOUfVfwaq5QaidmFIeRiMS6%2F78Kr8VUOQqzYEPWsbU3c%2Bgcb6ufD18Ne4xsArBF%2BDlejbUpL%2BmAyNBXXljzj3xaP3cYjTauUUjHVfh9nNXc22tXi%2Fg%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2BvzijvZxNyil8L2atP%2B1CmtB%2Fi2AtW2ac%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX182miyQugXV%2F9JuC5oGjg5M0SpvLaHjID8%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX19DgLS3ov47kj%2FYoDtSjRcA6f8jiWKTPW0%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX19ULK9LXl2liE4twM7xQKUH2YlanDsQVpE%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2BkqMT5RGKM5r87MhaD1fftPDU0f%2BWqiV6SZ4ij5haKlEB5XCUv%2FGZePyeP3NuZx%2FImH%2B%2BNT%2FPJxQ%3D%3D; mbox=session#f4cdbd6478d746eebf1161edd63f1cbe#1668735264|PC#f4cdbd6478d746eebf1161edd63f1cbe.35_0#1731978204; _ga_XYCM3QJRK1=GS1.1.1668732651.1.1.1668733403.49.0.0; _ga=GA1.2.834918726.1668732652; mp_footlocker_mixpanel=%7B%22distinct_id%22%3A%20%2218488378d2e7b8-0def2088e8fe5c-19525635-fa000-18488378d2f61e%22%2C%22bc_persist_updated%22%3A%201668732652876%2C%22event_lang%22%3A%20%22en%22%7D; _uetsid=0d7fa62066db11edb856c70a843a71ba; _uetvid=0d7fe72066db11ed8d6d17c37a5ceea0; IR_11068=1668733405576%7C0%7C1668733405576%7C%7C; cto_bundle=bQa90V9qYWYlMkY3RnlFVnZxaENzciUyRlBFV0EyYXlHWVFZT0lyQmlzREsxNW8lMkJPRzFLaFUlMkZwMWlrbUVsczVlYkolMkZkdE50d1IyJTJGSVFYdVU1WDRPNCUyQk9MS0xiTkZMZ0RiJTJCRUtPaVNJQUpRV0glMkZ1RWYwT2FicnBjNXVHVEVvcm4lMkJzVmRUY0Z6RXVNbTZoMXdWY3lsMjQxbnFEWE5UUSUzRCUzRA; bc_invalidateUrlCache_targeting=1668733406815; __attentive_pv=19; datadome=5dd4~jQxcahvPLoSt7vlMY7VlL8IGR6twWkbghgSlbUXl36~bMaGIN4OdfRSK1HBpi7LkODax1D54gzBSf7KaC3cLVcqQt-qvbly-kClrPtETBKt1Goea~nbps6v~ItL; s_lv=1668733413905; s_sq=footlockerglobalprod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dfl%25253A%252520w%25253A%252520release%252520dates%2526link%253D-%252520Launch%252520date%25253A%252520Nov%25252019%252520-%252520ENTER%252520VIA%252520APP%252520-%252520Jordan%252520Retro%2525201%252520High%252520OG%252520Gender%25253A%252520MENS%252520Color%25253A%252520RED%25252FMULTI%252520-%252520Price%25253A%252520%252524%252520180.00%2526region%253DreleaseCalendarTabs-upcoming-panel%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dfl%25253A%252520w%25253A%252520release%252520dates%2526pidt%253D1%2526oid%253Dhttps%25253A%25252F%25252Fwww.footlocker.com%25252Fen%25252Frelease-dates%25252Fjordan%25252FZ5485612.html%2526ot%253DA"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.footlocker.com/en/release-dates/jordan/Z5485612.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"106\", \"Google Chrome\";v=\"106\", \"Not;A=Brand\";v=\"99\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-api-country",
+						"value": "US"
+					},
+					{
+						"key": "x-api-key",
+						"value": "jv4A8eortRrSAPlKnaXEWBnntIy88R5S"
+					},
+					{
+						"key": "x-fl-request-id",
+						"value": "d335f380-66dc-11ed-95b5-6385e0614624"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.footlocker.com/apigate/release-calendar?sku=Z5485612&timestamp=4",
+					"protocol": "https",
+					"host": [
+						"www",
+						"footlocker",
+						"com"
+					],
+					"path": [
+						"apigate",
+						"release-calendar"
+					],
+					"query": [
+						{
+							"key": "sku",
+							"value": "Z5485612"
+						},
+						{
+							"key": "timestamp",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Release_NikeName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var responseData = pm.response.json();\r",
+							"console.log(responseData.releaseCalendarProducts[0].name);\r",
+							"\r",
+							"pm.test(\"Verify name equals to <Nike Air More Uptempo 96> for [JordanRetro]\", function(){\r",
+							"    pm.expect(responseData.releaseCalendarProducts[0].name).to.equal(\"Nike Air More Uptempo 96\");\r",
+							"})\r",
+							"\r",
+							"console.log(responseData.releaseCalendarProducts[0].reservation.pricesFormatted[0].formattedValue);\r",
+							"pm.test(\"Verify price equals to <$ 170.00> for [Nike]\", function(){\r",
+							"    pm.expect(responseData.releaseCalendarProducts[0].reservation.pricesFormatted[0].formattedValue).to.equal(\"$ 170.00\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "www.footlocker.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID=f9ebfd19-4332-4765-a8ed-3dabb67c24d0; ZGWID=eyJhbGciOiJIUzUxMiJ9.eyJndWVzdElkIjoiNTliNDk3NGUtMmIzNi00NDgxLTgxNWYtYmQ4ODdjNGU4NDAwIiwiaWF0IjoxNjY4NzMyNzMxLCJleHAiOjE3MDAyNjg3MzF9.nyhBZ-49MAEPL-ggGpn30YzTO_iBzrilb-voUbTIhl_-4mvlFvYPIs4d9fDxHiHh4HOl5Hu3842AuxZ4-4dtDw; at_check=true; userStatus=guest; AMCVS_40A3741F578E26BA7F000101%40AdobeOrg=1; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX1%2Bv052FrcRrRWEvV5%2FioWVi2a6ltrct5kg%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX18tJav5pJqHssX3V3QbSFaJa16DXUm60LE%3D; mboxEdgeCluster=35; AMCV_40A3741F578E26BA7F000101%40AdobeOrg=-1124106680%7CMCIDTS%7C19315%7CMCMID%7C52954434383969912231120161769248274241%7CMCAAMLH-1669337532%7C7%7CMCAAMB-1669337532%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1668739932s%7CNONE%7CMCSYNCSOP%7C411-19322%7CvVersion%7C5.2.0; s_vs=1; s_lv_s=First%20Visit; s_pr_tbe65=1668732733785; s_cc=true; _gid=GA1.2.1418737918.1668732734; _tt_enable_cookie=1; _ttp=669023e9-0f80-4cbb-b337-7118bb77d1d0; _schn=_oxxg9v; _scid=30b8fe48-e320-416a-b3bd-0d1d4d4587b2; sc.ASP.NET_SESSIONID=w5k3aroudg22zgrqmxhk40lg; _mibhv=anon-1668732735906-2887938042_2389; IR_gbd=footlocker.com; sc.UserId=57e7f3fb-c60d-4ef5-9e89-7be70d533b4b; _rdt_uuid=1668732736453.fc8b4c83-ebb9-470c-bf6a-d8236ac1c7a6; _fbp=fb.1.1668732736819.973369191; __attentive_id=2fdf6a6699264817b8e368122abf600f; _attn_=eyJ1Ijoie1wiY29cIjoxNjY4NzMyNzM3MDIxLFwidW9cIjoxNjY4NzMyNzM3MDIxLFwibWFcIjoyMTkwMCxcImluXCI6ZmFsc2UsXCJ2YWxcIjpcIjJmZGY2YTY2OTkyNjQ4MTdiOGUzNjgxMjJhYmY2MDBmXCJ9In0=; __attentive_cco=1668732737032; bluecoreNV=true; _pin_unauth=dWlkPVlUaGlPREExWkRndE4yVXhaUzAwT1dJMkxUaG1NakF0T0dZME9XRTBPR1UwTURJeg; __attentive_dv=1; _gcl_au=1.1.374213731.1668732738; _sctr=1|1668661200000; termsofuse_consent=true; IR_PI=3f5c7c88-66db-11ed-a4dd-4bb0b90dba31%7C1668820824052; rl_session=RudderEncrypt%3AU2FsdGVkX18t7exkMN9I6B91AFlXgTCXVbLG6kMxCCPorjt8fcdZmIQBxMbMnKeysEfWg%2BUhkQTDaRtZKvsf21BxTRsHFNohRgTaL9AxS7s81wAOpFfTyKSRejwgerxNQLEXEWgOtRBHx%2FJs36eE1Q%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2BVqhu%2FLD6wva%2FUs9sm%2BiJMcnAPXBeFoC0%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX1%2FAlD1LzDbVa3J6ijAU%2F%2B6DdM8XbkSlyi8%3D; rl_group_id=RudderEncrypt%3AU2FsdGVkX1%2FA11M%2FscBZciwzpbt%2Bxi9J8XqRRuXrC1k%3D; rl_group_trait=RudderEncrypt%3AU2FsdGVkX19CkE49TCL8IGUQ8wp972ztmH4SU6s8%2Fj0%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX19fUVjYXHv3iKXLUMO2%2BEyZIm9rfLEun0z65zYwJbFgoo2jM2MBQ41%2FeISpG5EFnUf%2BqoX2VufFUQ%3D%3D; _ga=GA1.2.811963260.1668732734; mp_footlocker_mixpanel=%7B%22distinct_id%22%3A%20%221848838cd90630-07a078562495b9-7d5d5474-144000-1848838cd912e7%22%2C%22bc_persist_updated%22%3A%201668732734878%2C%22event_lang%22%3A%20%22en%22%7D; IR_11068=1668734435154%7C0%7C1668734435154%7C%7C; cto_bundle=L8eSKF9QQzJESDFuN3U2UWtKQ1Zld2IlMkIxTTY5T1JZZEdMMXVidGZTSGd5YTV1QkJiZHVvbVRadGJiM1RBMWRuc1l6TTF3d1Jrek1maVY0dDZlZDBCUkUzN1dicCUyRlM4WTNmaDk2MzJVMSUyQndLUDJUUTkybGd4R2RsNHgzRUElMkI5TFFSZEQwcyUyRnBqZGJQQTVjWERVNDl6SEJnTDNnJTNEJTNE; __attentive_pv=20; __attentive_ss_referrer=\"https://www.footlocker.com/release-dates\"; aa_pageHistory=[{\"n\":\"FL: W: En: Release Dates: Jordan: Z5485612\",\"t\":\"Release Calendar\",\"p\":\"/en/release-dates/jordan/Z5485612.html\"},{\"n\":\"FL: W: Release Dates\",\"t\":\"Release Calendar\",\"p\":\"/release-dates\"}]; _gat_gtag_UA_50007301_5=1; mbox=session#72840655acdd465996cf6881f26d1076#1668736851|PC#72840655acdd465996cf6881f26d1076.35_0#1731979791; _ga_XYCM3QJRK1=GS1.1.1668732733.1.1.1668734991.58.0.0; _uetsid=3e6b6d5066db11ed8a8be548939f49f5; _uetvid=3e6bd7b066db11edad6741c391a0b848; datadome=07kLqbt50Cm6dJPEvj0zxreCjEPnkVQcOap7AYa62JyIk6E8Z9c5TE5nY~L1ZE49zU8~BYJeOHXbx~r2ThJt4~hXDjKYKyoBWb1ZssJPYtd35NQRG~t7Y2u2gWIxjoC1; s_lv=1668735022824; s_sq=footlockerglobalprod%3D%2526c.%2526a.%2526activitymap.%2526page%253Dfl%25253A%252520w%25253A%252520release%252520dates%2526link%253D-%252520Launch%252520date%25253A%252520Nov%25252024%252520Nike%252520Air%252520More%252520Uptempo%25252096%252520Gender%25253A%252520MENS%252520Color%25253A%252520WHITE%25252FRED%25252FBLACK%252520-%252520Price%25253A%252520%252524%252520170.00%2526region%253DreleaseCalendarTabs-upcoming-panel%2526pageIDType%253D1%2526.activitymap%2526.a%2526.c%2526pid%253Dfl%25253A%252520w%25253A%252520release%252520dates%2526pidt%253D1%2526oid%253Dhttps%25253A%25252F%25252Fwww.footlocker.com%25252Fen%25252Frelease-dates%25252Fnike%25252FZ4838100.html%2526ot%253DA"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.footlocker.com/en/release-dates/nike/Z4838100.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42"
+					},
+					{
+						"key": "x-api-country",
+						"value": "US"
+					},
+					{
+						"key": "x-api-key",
+						"value": "jv4A8eortRrSAPlKnaXEWBnntIy88R5S"
+					},
+					{
+						"key": "x-fl-request-id",
+						"value": "922689a0-66e0-11ed-a15a-bf4906491f96"
+					}
+				],
+				"url": {
+					"raw": "https://www.footlocker.com/apigate/release-calendar?sku=Z4838100&timestamp=4",
+					"protocol": "https",
+					"host": [
+						"www",
+						"footlocker",
+						"com"
+					],
+					"path": [
+						"apigate",
+						"release-calendar"
+					],
+					"query": [
+						{
+							"key": "sku",
+							"value": "Z4838100"
+						},
+						{
+							"key": "timestamp",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
